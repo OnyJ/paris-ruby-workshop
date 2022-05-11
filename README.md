@@ -1,4 +1,8 @@
-# Nom d'un Robot !
+# Katas from Paris Ruby Workshop event
+
+## Katas
+
+### Nom d'un Robot !
 
 Voici un petit kata, assez simple et court (ça tient en moins de 20 lignes en comptant les lignes vides) mais qui permet de revoir certaines bases de l'objet en Ruby, avec notamment les **variables et méthodes de classe** versus **celles d'instance**.  
 
@@ -20,7 +24,7 @@ Pour les plus expérimentés, vous pouvez créer un objet de type Emunerator si 
 
 Points bonus si cette méthode n'a rien à faire pour votre solution. 
 
-### Pour les anglophones:
+#### Pour les anglophones:
 
 When robots come off the factory floor, they have no name. 
 
