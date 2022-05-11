@@ -5,6 +5,13 @@ class Robot
     @@all_names ||= Array.new
   end
 
+  def self.forget
+    self.all.map do |instance| 
+      instance.name = generate_name
+      validate.name(instance.name)
+    end
+  end
+
   def initialize(name = generate_name)
     @name = name
     validate_name
@@ -35,6 +42,10 @@ class Robot
 end
 
 a = Robot.new("Babar")
-b = Robot.new("Babar")
+b = Robot.new("Céleste")
 puts Robot.all_names
 
+Robot.forget
+puts a.name
+puts b.name
+puts Robot.all_names
