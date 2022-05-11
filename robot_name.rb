@@ -5,10 +5,14 @@ class Robot
     @@all_names ||= Array.new
   end
 
+  def self.all
+    ObjectSpace.each_object(self).to_a
+  end
+
   def self.forget
-    self.all.map do |instance| 
-      instance.name = generate_name
-      validate.name(instance.name)
+    self.all.each do |instance| 
+      instance.name = instance.generate_name
+      instance.validate_name
     end
   end
 
@@ -33,6 +37,10 @@ class Robot
     end
   end
 
+  def reset
+    #I just exist for administrative purposes. I'm sad.
+  end
+
   private
 
   def name_is_new?
@@ -43,9 +51,19 @@ end
 
 a = Robot.new("Babar")
 b = Robot.new("Céleste")
+puts 
+
+puts "initial memory"
 puts Robot.all_names
+puts
 
 Robot.forget
+
+puts "New names"
 puts a.name
 puts b.name
+puts
+
+puts "New memory"
 puts Robot.all_names
+
